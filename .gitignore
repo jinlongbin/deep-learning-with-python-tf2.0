@@ -17,4 +17,4 @@ datasets/*.tar.gz
 images/*
 dream_at_scale*
 style_transfer_result*
-model*
+model.png
