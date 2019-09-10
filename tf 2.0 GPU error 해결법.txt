@@ -1,0 +1,17 @@
+#tf 2.0 GPU error 해결법
+import tensorflow as tf   
+gpu_options = tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.7)
+
+sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=gpu_options))
+
+#tf 1. 사용시
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
+#CPU/GPU 지정
+from tensorflow.python.client import device_lib
+print(device_lib.list_local_devices())
+
+with tf.device('/device:CPU:0'):   # '/device:GPU:0'
+    model = Sequential()
+    ....
