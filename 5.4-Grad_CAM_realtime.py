@@ -1,6 +1,7 @@
 import tensorflow as tf   
 gpu_options = tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.7)
 sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=gpu_options))
+import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
 from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
